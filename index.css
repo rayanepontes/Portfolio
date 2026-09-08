@@ -1,11 +1,213 @@
-* { 
+:root {
+    --lilas: #fdb5ff;
+    --rosa: #B1103E;
+}
+
+* {
     margin: 0;
     padding: 0; 
-    box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "MADE Okine Sans";
+    src: url("./fonts/MADEOkineSansPERSONALUSE-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MADE Okine Sans";
+    src: url("./fonts/MADEOkineSansPERSONALUSE-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--lilas);
+}
+
+.elemento-area {
+    position: fixed;
+    z-index: 2;
+    top: -58px;
+    left: 0;
+    width: 100%;
+    height: 114px;
+    transition: transform 1.2s ease-in-out;
+}
+
+.elemento-area:hover,
+.elemento-area.is-active {
+    transform: translateY(36px);
+}
+
+.elemento-hover {
+    display: block;
+    width: 100%;
+    height: 114px;
+}
+
+.hire-me {
+    position: absolute;
+    top: 71px;
+    right: 1.18%;
+    display: grid;
+    width: 6.8125rem;
+    height: 1.375rem;
+    place-items: center;
+    color: var(--lilas);
+    font-family: "MADE Okine Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+
+.artboard {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    overflow: hidden;
+    background: var(--lilas);
+}
+
+.frase {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    margin: 0;
+    color: var(--rosa);
+    font-family: "MADE Okine Sans", sans-serif;
+    font-size: clamp(3.5rem, 8.33vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.79;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.frase span {
+    position: absolute;
+    display: block;
+    white-space: nowrap;
+}
+
+.frase-topo {
+    top: 8.5rem;
+    left: 3vw;
+}
+
+.frase-base {
+    right: 1.9vw;
+    bottom: 14.9vh;
+    text-align: right;
+}
+
+.personagem {
+    position: absolute;
+    display: block;
+    width: min(100%, 1324.4px);
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    min-height: 4.125rem;
+    padding: 0 2rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    align-self: flex-start;
+    color: var(--rosa);
+    font-family: "MADE Okine Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.1rem;
+    text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    color: var(--rosa);
+    font-family: "MADE Okine Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.brand:hover,
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+    body {
+        overflow: hidden;
+    }
+
+    .elemento-area {
+        display: none;
+    }
+
+    .frase {
+        z-index: 2;
+        display: flex;
+        top: 8vh;
+        right: 1rem;
+        bottom: auto;
+        left: 1rem;
+        flex-direction: column;
+        align-items: center;
+        font-size: clamp(2.25rem, 11vw, 4rem);
+        line-height: 0.82;
+        text-align: center;
+    }
+
+    .frase span {
+        position: static;
+        white-space: normal;
+    }
+
+    .frase-base {
+        margin-top: 0.12em;
+    }
+
+    .navbar {
+        min-height: 3.5rem;
+        padding-right: 1rem;
+    }
+
+    .brand {
+        font-size: 1.45rem;
+        letter-spacing: -0.07rem;
+    }
+
+    .nav-links {
+        gap: 0.55rem;
+    }
+
+    .nav-links a {
+        font-size: 0.72rem;
+    }
 }

@@ -51,16 +51,23 @@ body {
     object-fit: fill;
 }
 
+.conteudo-scroll {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
 .artboard {
-    display: grid;
+    position: relative; 
     min-height: 100vh;
-    place-items: center;
-    overflow: hidden;
-    background: var(--lilas);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
 }
 
 .frase {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     inset: 0;
     margin: 0;
@@ -99,7 +106,7 @@ body {
 }
 
 .personagem {
-    position: fixed;
+    position: absolute;
     display: block;
     width: min(100%, 1500px);
     height: auto;
@@ -107,6 +114,7 @@ body {
     object-fit: contain;
     transform: translateY(90px);
 }
+
 
 .navbar {
     position: fixed;
@@ -190,4 +198,28 @@ body {
 .nav-links a {
     font-size: 0.72rem;
 }
+}
+
+.onda{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 300vh;
+    object-fit: cover;
+    z-index: -10;
+    pointer-events: none;
+}
+.onda1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 600vh;
+    object-fit: cover;
+    z-index: 2;
+    pointer-events: none;
+}
+#about{
+
 }
